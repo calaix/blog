@@ -1,0 +1,130 @@
+baseURL: 'https://calaix.github.io/blog/'                          
+locale: 'ca-es'
+defaultContentLanguage: 'ca'
+title: 'JSC blog 🌟'
+theme: 'PaperMod'
+
+# Permet utilitzar HTML a les opcions de text de la configuració (per a la imatge)
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+# Activa el cercador integrat
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production
+  title: 'Calaix de sastre'
+  #author: 'JSC'
+  dateFormat: "02-01-2006"
+  
+
+  # ... otros parámetros ...
+
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/calaix"
+    - name: "rss"
+      url: "index.xml"
+    - name: "mastodon"
+      url: "https://mastodon.social"
+    - name: "bluesky"
+      url: "https://bsky.app"
+    - name: "youtube"
+      url: "https://youtube.com"
+
+  # Mode d'inici amb Avatar centrat i llista d'articles a sota
+  homeInfoParams:
+    Title: "Calaix de sastre"
+    Content: >-
+      <img src="avatar.png" alt="Avatar" style="width: 120px; height: 120px; border-radius: 50%; display: block; margin: 0 auto 20px auto;" />
+
+      Aquest és el meu espai personal sobre tecnologia, desenvolupament i projectes.
+      Aquí hi trobaràs articles, tutorials i notes sobre el meu dia a dia programant.
+      Espero que et sigui útil i profitós.
+
+  # Favicon al blog
+  assets:
+    favicon: "favicon.png"
+
+    
+
+  # Imatges a la portada per defecte
+  cover:
+    hidden: false # Mostra les imatges de portada per defecte
+    hiddenInList: false # Mostra les imatges a la llista de la pàgina d'inici
+    hiddenInSingle: true # Mostra les imatges dins de l'article
+    auto: true # <--- AQUESTA OPCIÓ AUTOMATITZA LA CERCA   
+    #relative: true        # <--- AQUESTA OPCIÓ HO FÀ RELATIU DE FORMA GLOBAL 
+
+  # Configuració visual
+  defaultTheme: auto
+  disableThemeToggle: false
+  
+  ShowReadingTime: false
+  ShowShareButtons: true
+  shareButtons:
+    - "linkedin"
+    - "telegram"
+    - "whatsapp"
+    - "facebook"
+
+  
+  
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  
+  # Cerca integrada
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 100
+    threshold: 0.4
+    minMatchCharLength: 2
+    keys: ["title", "permalink", "summary", "content"]
+
+# Menú de navegació
+menu:
+  main:
+    - name: "Arxiu"
+      url: "archives/"
+      weight: 10
+      
+    - name: "Etiquetes"
+      url: "tags/"
+      weight: 20
+    - identifier: "about"
+      name: "Sobre"
+      url: "about/"
+      weight: 30
+    
+    - identifier: "cerca"
+      name: "🔍︎​"
+      url: "search/"
+      weight: 40
+
+   # - name: "rss"
+   #   url: /index.xml
+   #   weight: 50
+
+    - identifier: "wiki"
+      name: "🆆iki PaperMod's"
+      url: "https://github.com/adityatelange/hugo-PaperMod/wiki/"
+      weight: 60
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
+# Paginació
+pagination:
+  pagerSize: 3
+

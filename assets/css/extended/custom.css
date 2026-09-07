@@ -1,0 +1,209 @@
+/* Disseny en 2 columnes: Text (esquerra) - Imatge (dreta) */
+.post-entry {
+  display: grid;
+  grid-template-columns: 1fr auto; /* La primera columna ocupa tot el text, la segona la imatge */
+  grid-template-areas:
+    "header cover"
+    "footer cover"
+    "content cover";
+  align-items: start; /* Alinea la imatge i el text a dalt de tot */
+  column-gap: 1.5rem;
+  padding: 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Assignació de cada element de text */
+.post-entry .entry-header {
+  grid-area: header;
+}
+
+.post-entry .entry-footer {
+  grid-area: footer;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.post-entry .entry-content {
+  grid-area: content;
+  margin-top: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+/* Títol ben definit */
+.post-entry .entry-header h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+/* Imatge fixa a la dreta (alineada a dalt) */
+.post-entry .entry-cover {
+  grid-area: cover;
+  margin: 0;
+  width: 170px;
+  min-width: 170px;
+  height: 110px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.post-entry .entry-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efectes Hover */
+.post-entry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+}
+
+.post-entry:hover .entry-cover img {
+  transform: scale(1.05);
+  filter: brightness(1.08);
+}
+
+/* Adaptació per a dispositius mòbils (Imatge a sota de tot) */
+@media (max-width: 684px) {
+  .post-entry {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "footer"
+      "content"
+      "cover"; /* <-- Imatge al final de la targeta */
+    row-gap: 0.5rem;
+  }
+  
+  .post-entry .entry-cover {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+  }
+}
+
+
+/* Per centrar el text de la pàgina d inici   - JSC blog */
+.first-entry .entry-header h1, 
+.profile .profile_inner h1,
+.home-info .entry-header h1 {
+    text-align: center;
+}
+
+
+/* per justificar els textos dels articles i de la pàgina sobre */
+.post-content {
+    text-align: justify;
+}
+
+
+/* 1. Mantenir les imatges de la pàgina d'inici i l'avatar intactes */
+.first-entry img,
+.entry-cover img,
+.profile img {
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: inherit;
+}
+
+/* 2. Marc, padding i espaiat NOMS per a imatges/figures DINS dels articles */
+.post-content figure {
+    display: block;
+    margin-top: 2rem !important;
+    margin-bottom: 2.5rem !important;
+    padding: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+}
+
+/* Ajust de la imatge dins de l'article */
+.post-content figure img {
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 8px !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* Peu de foto dins de l'article */
+.post-content figure figcaption,
+.post-content figure figcaption * {
+    font-weight: 400 !important;
+    font-size: 0.8rem !important;
+    color: #a0a0a0 !important;
+    text-align: center !important;
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+}
+
+
+
+/* Centrar la imatge de la secció home-info */
+.home-info .entry-content img,
+.home-info img,
+.first-entry img {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+}
+
+/* Centrar el contenedor de iconos sociales */
+.social-icons {
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+
+/* Faig que el contenidor figure s'ajusti a la mida de la imatge */
+.post-content figure {
+    display: inline-block !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 1.5rem auto !important;
+}
+
+/* Centra la figura dins del text */
+.post-content p:has(figure),
+.post-content figure {
+    text-align: center;
+}
+
+/* S'assegura que la imatge mantingui les seves proporcions */
+.post-content figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Força el centratat quan s'utilitza align="center" al shortcode figure */
+.post-content figure.align-center,
+.post-content figure[align="center"] {
+    display: table !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+/* Assegura que la imatge interna i el text quedin ben al·lineats */
+.post-content figure.align-center img,
+.post-content figure[align="center"] img {
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.post-content figure.align-center figcaption,
+.post-content figure[align="center"] figcaption {
+    text-align: center !important;
+}
