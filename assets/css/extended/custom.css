@@ -207,3 +207,8 @@
 .post-content figure[align="center"] figcaption {
     text-align: center !important;
 }
+
+
+.post-tags {
+    justify-content: center;
+}

@@ -67,7 +67,7 @@ params:
   disableThemeToggle: false
   
   ShowReadingTime: false
-  ShowShareButtons: true
+  ShowShareButtons: false
   shareButtons:
     - "linkedin"
     - "telegram"
