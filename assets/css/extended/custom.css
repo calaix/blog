@@ -208,7 +208,30 @@
     text-align: center !important;
 }
 
-/*etiquetes justificades*/
+
+
+/* Centra el contenidor de les etiquetes */
 .post-tags {
-    justify-content: center;
+    display: flex;
+    justify-content: center; /* Centra horitzontalment les etiquetes */
+    flex-wrap: wrap;         /* Si n'hi ha moltes, passen a la següent línia */
+    gap: 8px;                /* Espaiat homogeni entre etiquetes */
+    margin-top: 20px;
 }
+
+/* Treu el fons de botó a les etiquetes i defineix estil de text */
+.post-tags a {
+    background: transparent !important; /* Treu el fons de botó */
+    border: none !important;            /* Treu qualsevol vora */
+    padding: 2px 6px !important;        /* Ajust de l'espaiat intern */
+    color: var(--primary) !important;   /* Utilitza el color adaptable (mode clar/fosc) */
+    font-weight: 500;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Efecte Hover al passar el ratolí per sobre */
+.post-tags a:hover {
+    background: transparent !important;
+    color: var(--secondary) !important; /* Canvia de color al passar-hi el ratolí */
+    text-decoration: underline;         /* Afegeix un subratllat */
+    opacity: 0.8;
