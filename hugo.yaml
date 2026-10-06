@@ -28,7 +28,7 @@ params:
 
   socialIcons:
     - name: "github"
-      url: "https://github.com/calaix"
+      url: "https://github.com/calaix/blog"
     - name: "rss"
       url: "index.xml"
     - name: "mastodon"
